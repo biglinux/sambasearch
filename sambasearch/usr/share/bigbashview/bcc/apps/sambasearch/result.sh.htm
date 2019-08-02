@@ -55,17 +55,17 @@ else
     p_username="$p_user"
 fi
 
-echo $"Procura efetuada com o usuário:" "<b> $p_username</b>" $"na rede:" "<b>$(hostname -I | sed 's/[^.]*$/0\/24/')</b>"  '<br><br>'
+echo $"Procura efetuada com o usuário:" "<b> $p_username</b>" $"na rede:" "<b>$(hostname -I | cut -f1 -d" " | sed 's/[^.]*$/0\/24/')</b>"  '<br><br>'
 
 
 echo '<ul class="collapsible">'
 
 
 
-for i  in  $(nmap -open -p 445,139 $(hostname -I | sed 's/[^.]*$/0\/24/') | grep "Nmap scan report" | sed 's|.* ||g;s|(||g;s|)||g'); do
+for i  in  $(nmap -open -p 445,139 $(hostname -I | cut -f1 -d" " | sed 's/[^.]*$/0\/24/') | grep "Nmap scan report" | sed 's|.* ||g;s|(||g;s|)||g'); do
 
 
-if [ "$i" != "$(hostname -I | awk  '{print $1}')" ]; then
+if [ "$i" != "$(hostname -I | cut -f1 -d" " | awk  '{print $1}')" ]; then
     echo '<li><div class="collapsible-header">'
     echo "$(nmblookup -A "$i" | sed -n -e 2p | awk  '{print $1}')" '<span class="badge">' "$i" '</span>'
     echo '</div><div class="collapsible-body"><p>'

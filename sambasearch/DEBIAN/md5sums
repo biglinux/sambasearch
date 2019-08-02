@@ -1,13 +1,11 @@
-5d839d0876ff002fd698dcddb910a85f  DEBIAN/control
 d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
+266c18533a5d26529cefc73aa16e4dfe  DEBIAN/control
 3d4eeb5b64c28b8e7793c1c8e71e1794  usr/share/bigbashview/bcc/apps/sambasearch/index.sh.htm
-465d22491de511465419502c14acdbba  usr/share/bigbashview/bcc/apps/sambasearch/result.sh.htm
+e400b950594e93905d43f7d3fc6c70cc  usr/share/bigbashview/bcc/apps/sambasearch/result.sh.htm
 3e1abcbf89b02f63cc67b71e7b925ef5  usr/share/bigbashview/bcc/apps/sambasearch/wait1.sh.htm
 ca9739d6975d20f88f74b89886241884  usr/share/bigbashview/bcc/apps/sambasearch/samba.run
 4f7d55e235f4a7b6438ac1f4dca16bd3  usr/share/bigbashview/bcc/apps/sambasearch/cancel.png
 c30cd977ccb0d1eca5aeb970fef5b003  usr/share/bigbashview/bcc/apps/sambasearch/ok.png
 a53a61744ba1c8e66fc387422c134bfc  usr/share/bigbashview/bcc/apps/sambasearch/logo.png
-834ce7552f19423ed7214b308ab2a7fd  usr/share/bigbashview/bcc/apps/sambasearch/2019-08-02 01-08-28.flv
-f601a45da8d6e507fad25a85ad361eae  usr/share/bigbashview/bcc/apps/sambasearch/2019-08-02 01-16-18.flv
 a654870af8dbcc98a65e935125174679  usr/share/applications/sambasearch.desktop
 33ebd8af0284d979291b5bd8ae99a87a  usr/bin/sambasearch
