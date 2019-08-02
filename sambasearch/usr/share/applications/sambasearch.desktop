@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=System;
+Exec=sambasearch
+Icon=/usr/share/bigbashview/bcc/apps/sambasearch/logo.png
+Name[pt_BR]=Procurar compartilhamentos
+Name=Browse shares
+StartupNotify=true
+Terminal=false
+Type=Application
+StartupWMClass=sambashare

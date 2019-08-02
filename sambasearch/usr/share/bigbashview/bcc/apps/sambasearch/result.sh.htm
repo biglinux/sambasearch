@@ -1,0 +1,109 @@
+#!/bin/bash
+
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=sambasearch
+
+# Import BigControlCenter base modules / Importa os módulos básicos do BigControlCenter
+# That's include jquery and materialize / Isso inclui o jquery e o materialize
+# http://materializecss.com/
+. /usr/share/bigbashview/bcc/shell/base.sh
+
+
+#Title/Description variables
+bcc_title="Procurar compartilhamentos"
+bcc_description=$"Localiza compartilhamentos na rede (Windows ou Samba)."
+# To disable logo use: bcc_logo="no"
+bcc_logo="logo.png"
+
+# About variables
+# To disable about use: bcc_about="no"
+bcc_about="yes"
+bcc_about_license=$"GPL v2 or greater"
+bcc_about_by=$"Bruno Gonçalves"
+bcc_about_release_date=$"01/08/2019"
+bcc_about_url_code=$"https://github.com/biglinux/apachesearch"
+bcc_about_url_project=$"https://www.biglinux.com.br"
+
+# Print header in screen
+bcc_header
+
+
+###############
+# Start Content
+
+# Search last version and link
+
+OIFS=$IFS
+IFS=$'\n'
+
+echo '<style type="text/css">
+.collapsible-body {
+    margin-top: 0px !important;
+    padding-left: 50px !important;
+    padding-top: 1px !important;
+    padding-bottom: 16px !important;
+    background-color: #f5f5f5;
+    line-height: 2;
+}
+</style>'
+
+echo '<body>'
+
+if [ "$p_user" = "" ]; then
+    p_username="Anônimo"
+else
+    p_username="$p_user"
+fi
+
+echo $"Procura efetuada com o usuário:" "<b> $p_username</b>" $"na rede:" "<b>$(hostname -I | sed 's/[^.]*$/0\/24/')</b>"  '<br><br>'
+
+
+echo '<ul class="collapsible">'
+
+
+
+for i  in  $(nmap -open -p 445,139 $(hostname -I | sed 's/[^.]*$/0\/24/') | grep "Nmap scan report" | sed 's|.* ||g;s|(||g;s|)||g'); do
+
+
+if [ "$i" != "$(hostname -I | awk  '{print $1}')" ]; then
+    echo '<li><div class="collapsible-header">'
+    echo "$(nmblookup -A "$i" | sed -n -e 2p | awk  '{print $1}')" '<span class="badge">' "$i" '</span>'
+    echo '</div><div class="collapsible-body"><p>'
+    
+    
+    for x  in  $(smbclient -L $i -U"$p_user%$p_pass" -g 2> /dev/null | grep "|" | grep -v '\$|'); do
+
+        echo "<br><a href=\"samba.run?user=$p_user&ip=$i&folder=$(echo "$x" | cut -f2 -d"|")\">" "$(echo "$x" | cut -f2 -d"|")" '</a>'
+    
+    done
+    echo '</p></div></li>'
+fi
+
+
+#Utiliza o smbclient para identificar as pastas compartilhadas
+#smbclient -L $i -U"user%pass"
+
+
+done
+echo '</ul></div>'
+
+IFS=$OIFS
+
+###################
+# Close content div
+echo '</div>'
+
+##############
+# Start footer
+echo '<div id="bcc_footer">'
+      echo '<div id="bcc_footer_right">'
+        echo '<a href="index.sh.htm" class="waves-effect waves-light btn blue-grey lighten-1">'$"Voltar"'</a>'
+        echo '<a href="/usr/share/bigbashview/close.sh" class="waves-effect waves-light btn blue-grey lighten-1"><img src=cancel.png>'$"Fechar"'</a>'
+      echo '</div>'
+echo '</div>'
+echo '</form>'
+
+
+#########
+# The end
+echo '</body>'

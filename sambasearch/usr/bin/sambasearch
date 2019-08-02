@@ -1,0 +1,2 @@
+#!/bin/bash
+bigbashview /usr/share/bigbashview/bcc/apps/sambasearch/index.sh.htm -s 750x600 -i /usr/share/bigbashview/bcc/apps/sambasearch/logo.png
