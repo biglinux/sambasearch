@@ -5,6 +5,6 @@ Architecture: all
 Maintainer: Bruno Goncalves <www.biglinux.com.br>
 Section: admin
 Priority: optional
-Installed-Size:
+Installed-Size:104104
 Description: Search samba shares in your network.
 
