@@ -1,10 +1,10 @@
 Package: sambasearch
-Version: 1.0.0-1big1
+Version: 1.0.0-1big2
 Depends: bigbashview, nmap, smbclient, samba-common-bin
 Architecture: all
 Maintainer: Bruno Goncalves <www.biglinux.com.br>
 Section: admin
 Priority: optional
-Installed-Size:44
+Installed-Size:48
 Description: Search samba shares in your network.
 

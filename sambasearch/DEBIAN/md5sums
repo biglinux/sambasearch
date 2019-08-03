@@ -7,5 +7,6 @@ ca9739d6975d20f88f74b89886241884  usr/share/bigbashview/bcc/apps/sambasearch/sam
 4f7d55e235f4a7b6438ac1f4dca16bd3  usr/share/bigbashview/bcc/apps/sambasearch/cancel.png
 c30cd977ccb0d1eca5aeb970fef5b003  usr/share/bigbashview/bcc/apps/sambasearch/ok.png
 a53a61744ba1c8e66fc387422c134bfc  usr/share/bigbashview/bcc/apps/sambasearch/logo.png
-a654870af8dbcc98a65e935125174679  usr/share/applications/sambasearch.desktop
+a53a61744ba1c8e66fc387422c134bfc  usr/share/bigbashview/bcc/apps/sambasearch/sambasearch.png
+d0c9ad719e5ab8f876d464bf1b532d50  usr/share/applications/sambasearch.desktop
 33ebd8af0284d979291b5bd8ae99a87a  usr/bin/sambasearch
