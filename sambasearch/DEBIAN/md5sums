@@ -1,5 +1,5 @@
 d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
-266c18533a5d26529cefc73aa16e4dfe  DEBIAN/control
+725af4db8217d60b4190e6e99b5da75d  DEBIAN/control
 3d4eeb5b64c28b8e7793c1c8e71e1794  usr/share/bigbashview/bcc/apps/sambasearch/index.sh.htm
 e400b950594e93905d43f7d3fc6c70cc  usr/share/bigbashview/bcc/apps/sambasearch/result.sh.htm
 3e1abcbf89b02f63cc67b71e7b925ef5  usr/share/bigbashview/bcc/apps/sambasearch/wait1.sh.htm
