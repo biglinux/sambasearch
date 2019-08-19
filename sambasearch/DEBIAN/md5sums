@@ -3,9 +3,9 @@ d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
 96909f382492133c8c25294fd49db534  DEBIAN/sambasearch.pot
 bd0b996728329dae4bcb33c6a991fe19  DEBIAN/pt.po
 66b909d78f9199ba28d8cfb293300f84  DEBIAN/en.po
-3eb5ae47fd122414843462ef3aa2b259  DEBIAN/control
 4e9896073a582e53d737c213f5728123  DEBIAN/es.po
 46afe613c9056d673e0325503b96856c  DEBIAN/es.mo
+f0e0816c90b86fcc780a077343a0bdfe  DEBIAN/control
 fce11fc9193fc9ee98c48edf6de3d094  usr/share/bigbashview/bcc/apps/sambasearch/index.sh.htm
 f34f6aac486f4d89c87399c9b91fc9ea  usr/share/bigbashview/bcc/apps/sambasearch/result.sh.htm
 f43fabcea91c7685f8e90a0a93fefb0f  usr/share/bigbashview/bcc/apps/sambasearch/wait1.sh.htm
