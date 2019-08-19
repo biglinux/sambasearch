@@ -10,7 +10,7 @@ export TEXTDOMAIN=sambasearch
 
 
 #Title/Description variables
-bcc_title="Procurar compartilhamentos"
+bcc_title=$"Procurar compartilhamentos"
 bcc_description=$"Localiza compartilhamentos na rede (Windows ou Samba)."
 # To disable logo use: bcc_logo="no"
 bcc_logo="logo.png"
@@ -50,7 +50,7 @@ echo '<style type="text/css">
 echo '<body>'
 
 if [ "$p_user" = "" ]; then
-    p_username="Anônimo"
+    p_username=$"Anônimo"
 else
     p_username="$p_user"
 fi

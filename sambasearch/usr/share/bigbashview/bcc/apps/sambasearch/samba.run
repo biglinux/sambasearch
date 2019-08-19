@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ "$p_user" = "" ]; then
-    xdg-open "smb://$p_ip/$p_folder"
+    dolphin "smb://$p_ip/$p_folder"
 else
-    xdg-open "smb://$p_user@$p_ip/$p_folder"
+    dolphin "smb://$p_user@$p_ip/$p_folder"
 fi
 
 
