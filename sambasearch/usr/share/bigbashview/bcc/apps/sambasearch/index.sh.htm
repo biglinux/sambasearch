@@ -42,6 +42,39 @@ font-weight: bold;
 
 </style>'
 
+
+if [ "$p_nt1" = "0" ]; then
+    sed -i 's|client max protocol = NT1||g' ~/.smb/smb.conf
+    
+    
+echo '<body onload="myFunction()">
+
+<script>
+function myFunction() {
+  alert("' $"Alteração aplicada, verifique se os compartilhamentos de rede estão aparecendo no gerenciador de arquivos." '");
+}
+</script>'
+fi
+
+if [ "$p_nt1" = "1" ]; then
+    echo 'client max protocol = NT1' >> ~/.smb/smb.conf
+    
+    
+echo '<body onload="myFunction()">
+
+<script>
+function myFunction() {
+  alert("' $"Alteração aplicada, verifique se os compartilhamentos de rede estão aparecendo no gerenciador de arquivos." '");
+}
+</script>'
+
+fi
+
+
+
+
+
+
 ###############
 # Start Content
 
@@ -52,7 +85,25 @@ echo $"Usuário" "<input type=\"text\" name=\"user\" id=\"user\" size=\"50\" cla
 
 echo $"Senha" "<input type=\"password\" name=\"pass\" id=\"pass\" size=\"50\" class=\"black-text tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"" $"Insira a senha do usuário do servidor que deseja acessar" '">'
 
-echo '<br><br><br><br><br><br><br>'
+echo '<br><br>'
+
+
+if [ "$(grep "client max protocol = NT1" ~/.smb/smb.conf)" != "" ]; then
+    echo '<input type="checkbox" name="nt1" value="1" id="nt1"' "onclick=\"window.location.href='index.sh.htm?nt1=0'\"" ' class="filled-in" checked>'
+else
+    echo '<input type="checkbox" name="nt1" value="0" id="nt1"' "onclick=\"window.location.href='index.sh.htm?nt1=1'\"" ' class="filled-in">'
+fi
+
+
+
+
+echo '<label for="nt1" class="black-text tooltipped" data-position="top" data-delay="50" data-tooltip="'
+
+echo $"Mantenha essa opção marcada para o gerenciador de arquivos detectar compartilhamentos de computadores com Windows anteriores à versão 10, ou desmarque para detectar versões mais recentes." '">'
+
+echo $"Forçar o uso do protocolo NT1." '</label>'
+
+echo '<br><br><br><br><br>'
 
 echo $"*A maioria dos servidores precisa de login e senha para listar os compartilhamentos disponíveis, deixe em branco para efetuar uma busca anônima." '<br><br>'
 
@@ -60,8 +111,6 @@ echo $"*A maioria dos servidores precisa de login e senha para listar os compart
 ###################
 # Close content div
 echo '</div>'
-
-
 
 echo '</body>'
 
