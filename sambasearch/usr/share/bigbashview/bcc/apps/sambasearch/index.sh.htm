@@ -88,20 +88,20 @@ echo $"Senha" "<input type=\"password\" name=\"pass\" id=\"pass\" size=\"50\" cl
 echo '<br><br>'
 
 
-if [ "$(grep "client max protocol = NT1" ~/.smb/smb.conf)" != "" ]; then
-    echo '<input type="checkbox" name="nt1" value="1" id="nt1"' "onclick=\"window.location.href='index.sh.htm?nt1=0'\"" ' class="filled-in" checked>'
-else
-    echo '<input type="checkbox" name="nt1" value="0" id="nt1"' "onclick=\"window.location.href='index.sh.htm?nt1=1'\"" ' class="filled-in">'
-fi
+#if [ "$(grep "client max protocol = NT1" ~/.smb/smb.conf)" != "" ]; then
+#    echo '<input type="checkbox" name="nt1" value="1" id="nt1"' "onclick=\"window.location.href='index.sh.htm?nt1=0'\"" ' class="filled-in" checked>'
+#else
+#    echo '<input type="checkbox" name="nt1" value="0" id="nt1"' "onclick=\"window.location.href='index.sh.htm?nt1=1'\"" ' class="filled-in">'
+#fi
 
 
 
 
-echo '<label for="nt1" class="black-text tooltipped" data-position="top" data-delay="50" data-tooltip="'
+#echo '<label for="nt1" class="black-text tooltipped" data-position="top" data-delay="50" data-tooltip="'
 
-echo $"Mantenha essa opção marcada para o gerenciador de arquivos detectar compartilhamentos de computadores com Windows anteriores à versão 10, ou desmarque para detectar versões mais recentes." '">'
+#echo $"Mantenha essa opção marcada para o gerenciador de arquivos detectar compartilhamentos de computadores com Windows anteriores à versão 10, ou desmarque para detectar versões mais recentes." '">'
 
-echo $"Forçar o uso do protocolo NT1." '</label>'
+#echo $"Forçar o uso do protocolo NT1." '</label>'
 
 echo '<br><br><br><br><br>'
 
