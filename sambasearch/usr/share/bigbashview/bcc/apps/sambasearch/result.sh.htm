@@ -62,7 +62,7 @@ echo '<ul class="collapsible">'
 
 
 
-for i  in  $(nmap -open -p 445,139 $(hostname -I | cut -f1 -d" " | sed 's/[^.]*$/0\/24/') | grep "Nmap scan report" | sed 's|.* ||g;s|(||g;s|)||g'); do
+for i  in  $(nmap -open -Pn -p 445,139 $(hostname -I | cut -f1 -d" " | sed 's/[^.]*$/0\/24/') | grep "Nmap scan report" | sed 's|.* ||g;s|(||g;s|)||g'); do
 
 
 if [ "$i" != "$(hostname -I | cut -f1 -d" " | awk  '{print $1}')" ]; then
