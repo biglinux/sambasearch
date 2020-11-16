@@ -43,7 +43,7 @@ font-weight: bold;
 </style>'
 
 
-if [ "$p_nt1" = "0" ]; then
+if [ "$nt1" = "0" ]; then
     sed -i 's|client max protocol = NT1||g' ~/.smb/smb.conf
     
     
@@ -56,7 +56,7 @@ function myFunction() {
 </script>'
 fi
 
-if [ "$p_nt1" = "1" ]; then
+if [ "$nt1" = "1" ]; then
     echo 'client max protocol = NT1' >> ~/.smb/smb.conf
     
     

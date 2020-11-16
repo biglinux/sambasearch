@@ -49,13 +49,13 @@ echo '<style type="text/css">
 
 echo '<body>'
 
-if [ "$p_user" = "" ]; then
-    p_username=$"Anônimo"
+if [ "$user" = "" ]; then
+    username=$"Anônimo"
 else
-    p_username="$p_user"
+    username="$user"
 fi
 
-echo $"Procura efetuada com o usuário:" "<b> $p_username</b>" $"na rede:" "<b>$(hostname -I | cut -f1 -d" " | sed 's/[^.]*$/0\/24/')</b>"  '<br><br>'
+echo $"Procura efetuada com o usuário:" "<b> $username</b>" $"na rede:" "<b>$(hostname -I | cut -f1 -d" " | sed 's/[^.]*$/0\/24/')</b>"  '<br><br>'
 
 
 echo '<ul class="collapsible">'
@@ -71,9 +71,9 @@ if [ "$i" != "$(hostname -I | cut -f1 -d" " | awk  '{print $1}')" ]; then
     echo '</div><div class="collapsible-body"><p>'
     
     
-    for x  in  $(smbclient -L $i -U"$p_user%$p_pass" -g 2> /dev/null | grep "|" | grep -v '\$|'); do
+    for x  in  $(smbclient -L $i -U"$user%$pass" -g 2> /dev/null | grep "|" | grep -v '\$|'); do
     
-        echo "<br><a onclick=\"_run('./samba.run?user=$p_user&ip=$i&folder=$(echo "$x" | cut -f2 -d"|")')\">" "$(echo "$x" | cut -f2 -d"|")" '</a>'
+        echo "<br><a onclick=\"_run('./samba.run?user=$user&ip=$i&folder=$(echo "$x" | cut -f2 -d"|")')\">" "$(echo "$x" | cut -f2 -d"|")" '</a>'
     
     done
     echo '</p></div></li>'
