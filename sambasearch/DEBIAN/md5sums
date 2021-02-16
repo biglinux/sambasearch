@@ -6,9 +6,9 @@ d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
 bd0b996728329dae4bcb33c6a991fe19  DEBIAN/pt.po
 96909f382492133c8c25294fd49db534  DEBIAN/sambasearch.pot
 55665eef72ae108b0106097858c9dfbf  DEBIAN/dpkg-divert
-2c1d425480f10367137df830ac3134b2  DEBIAN/preinst
-54a279876fb957ac4a4e8277ef1c1abc  DEBIAN/postrm
-eb0d47550834905668846e4895d15159  DEBIAN/control
+5afd1f89c9663b220e3399f07f122f99  DEBIAN/preinst
+b02e289054f3914409a9d1b7f7707d1a  DEBIAN/postrm
+35ce90ee549fa522019ce90b4bc1d5f5  DEBIAN/control
 de60a06ccbdfa819ba9c753b0401e10b  usr/bin/sambasearch
 d2a06f706f665e2ecb0922d6f83e9ac0  usr/bin/open-sambasearch-dolphin
 d0c9ad719e5ab8f876d464bf1b532d50  usr/share/applications/sambasearch.desktop
