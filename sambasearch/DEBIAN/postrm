@@ -3,10 +3,16 @@ set -e
 package_name=sambasearch
 case "$1" in
   remove)
+if [ "$(dpkg-divert --list "/usr/share/remoteview/smb-network.desktop")" != "" ]
+then
     dpkg-divert --package "$package_name" --rename --remove "/usr/share/remoteview/smb-network.desktop"
+fi
     ;;
   purge)
+if [ "$(dpkg-divert --list "/usr/share/remoteview/smb-network.desktop")" != "" ]
+then
     dpkg-divert --package "$package_name" --rename --remove "/usr/share/remoteview/smb-network.desktop"
+fi
 ;;
 esac
 exit 0

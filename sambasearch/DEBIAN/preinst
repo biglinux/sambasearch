@@ -3,13 +3,10 @@ set -e
 package_name=sambasearch
 mkdir -p "/usr/share/dpkgdivert/sambasearch"
 case "$1" in
-  install)
-    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sambasearch/usrshareremoteviewsmb-network.desktop" --rename "/usr/share/remoteview/smb-network.desktop"
-    ;;
   upgrade)
-if [ "$(dpkg-divert --list "/usr/share/remoteview/smb-network.desktop")" = "" ]
+if [ "$(dpkg-divert --list "/usr/share/remoteview/smb-network.desktop")" != "" ]
 then
-    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/sambasearch/usrshareremoteviewsmb-network.desktop" --rename "/usr/share/remoteview/smb-network.desktop"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/remoteview/smb-network.desktop"
 fi
 ;;
 esac
